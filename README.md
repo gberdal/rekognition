@@ -25,13 +25,13 @@ For more information about AWS Rekognition read the [Developer Guide](https://do
 #### EXIF tags
 EXIF information gets stripped out by some applications, such as Slack, and some images downloaded from, the web also are missing them. 
 
-The first image was made in the office with my Samsung Galaxy (Android) phone with the location tagging disabled.
+The first image I tested was made in the office with my Samsung Galaxy (Android) phone with the location tagging disabled.
 
 Sending the image via email, I managed to retain the tags and the application picked them up.
 ```json
 {"Exif": {"Make": "samsung", "Model": "SM-G930F"}}
 ```
-_NOTE: to see all the tags just take out the tags from the method parameter here._
+_NOTE: to see all the tags just take out the tags from the method parameter [here](https://github.com/gberdal/rekognition/blob/master/start.py#L88)._
 
 #### Object/Theme Recognition
 The AWS Rekognition service has a well trained model for recognising objects and themes of images. It can even tell the difference
@@ -43,5 +43,5 @@ of `Female Swimwear Or Underwear`.
 
 #### Weaknesses
 - face labeling often misses the `mustache` but detects `beard` very well, depending on the lighting conditions.
-- It seems to miss obvious gestures such as a "middle-finger" on this image `explicit.jpg`
+- It seems to miss obvious gestures such as a "middle-finger" on an image that I had taken of myself.
 
