@@ -9,8 +9,9 @@ mshell-aws-login
 
 Start a virtualenv and install requirements
 ```bash
-virtualenv reko -p pyhton3
+virtualenv reko -p python3
 source reko/bin/activate
+cd rekognition
 pip install -r requirements.txt
 ```
 
