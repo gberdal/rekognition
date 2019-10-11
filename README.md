@@ -19,7 +19,7 @@ Put your images into the directory `/images` and start the application with
 ```bash
 python start.py
 ```
-NOTE: If you need free images you can find quite a few in [Imagenet](http://image-net.org/).
+NOTE: If you need free images you can find quite a few in [COCO Dataset](http://cocodataset.org/#download).
 
 For more information about AWS Rekognition read the [Developer Guide](https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-dg.pdf)
 
