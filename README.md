@@ -19,7 +19,7 @@ Put your images into the directory `/images` and start the application with
 ```bash
 python start.py
 ```
-NOTE: If you need free images you can find quite a few in [Google Open Images](https://storage.googleapis.com/openimages/web/download.html).
+NOTE: The folder already contains a few images sourced from [Google Open Images](https://storage.googleapis.com/openimages/web/download.html). If you need more free images you can find quite a few more there.
 
 For more information about AWS Rekognition read the [Developer Guide](https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-dg.pdf)
 
