@@ -23,6 +23,10 @@ NOTE: The folder already contains a few images sourced from [Google Open Images]
 
 For more information about AWS Rekognition read the [Developer Guide](https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-dg.pdf)
 
+### Configuration
+In order to access the service you'd need to configure your credentials following this [document](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html).
+
+
 ### Explanation about the results
 Using various images (not necesserily the ones supplied in the repo) I could identofy some areas where the serrvice performs well, and some where it does not so well.
 
