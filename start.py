@@ -2,6 +2,7 @@ import boto3
 import pprint
 import os
 import piexif
+import imghdr
 
 
 client = boto3.client('rekognition')
@@ -13,6 +14,14 @@ def read_image(image_path):
     :param image_path: string
     :return: string
     """
+    exceptions = ['.DS_Store']
+    supported_img_types = ['jpg', 'jpeg', 'png']
+    filename = os.path.basename(image_path)
+    img_type = imghdr.what(image_path)
+    if filename in exceptions:
+        return
+    if img_type not in supported_img_types:
+        raise Exception('Invalid image type')
     with open(image_path, 'rb') as fh:
         return fh.read()
 
@@ -74,6 +83,8 @@ for root, dirs, files in os.walk('images'):
 
         # get images as bytes
         image = read_image(image_path=path)
+        if not image:
+            continue
 
         # get mod labels
         mod_labels = get_moderation_labels(image_bytes=image)
@@ -88,6 +99,4 @@ for root, dirs, files in os.walk('images'):
         exif = get_exif(image_path=path, tags=['Make', 'Model'])
         response['Exif'] = exif
 
-        pprint.pprint(response)
-
-
+    pprint.pprint(response)
