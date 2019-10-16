@@ -2,11 +2,6 @@
 A prototype Python application for testing AWS Rekognition on localhost.
 
 ### Install
-Log in with mshell to get access to the service in AWS
-```bash
-mshell-aws-login
-```
-
 Start a virtualenv and install requirements
 ```bash
 virtualenv reko -p python3
