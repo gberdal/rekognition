@@ -76,10 +76,11 @@ def get_exif(image_path, tags="*"):
 
 
 # read images folder and process them
-response = {}
+response = []
 for root, dirs, files in os.walk('images'):
     for file in files:
         path = "/".join([root, file])
+        item = {}
 
         # get images as bytes
         image = read_image(image_path=path)
@@ -88,15 +89,17 @@ for root, dirs, files in os.walk('images'):
 
         # get mod labels
         mod_labels = get_moderation_labels(image_bytes=image)
-        response['ImagePath'] = path
-        response['ModerationLabels'] = [labels['Name'] for labels in mod_labels.get('ModerationLabels')]
+        item['ImagePath'] = path
+        item['ModerationLabels'] = [labels['Name'] for labels in mod_labels.get('ModerationLabels')]
 
         # get labels
         labels = get_labels(image_bytes=image)
-        response['Labels'] = [labels['Name'] for labels in labels.get('Labels')]
+        item['Labels'] = [labels['Name'] for labels in labels.get('Labels')]
 
         # get exif
         exif = get_exif(image_path=path, tags=['Make', 'Model'])
-        response['Exif'] = exif
+        item['Exif'] = exif
 
-        pprint.pprint(response)
+        response.append(item)
+
+    pprint.pprint(response)
