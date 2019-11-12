@@ -99,4 +99,4 @@ for root, dirs, files in os.walk('images'):
         exif = get_exif(image_path=path, tags=['Make', 'Model'])
         response['Exif'] = exif
 
-    pprint.pprint(response)
+        pprint.pprint(response)
